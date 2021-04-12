@@ -62,7 +62,7 @@ def add_new_user(request):
 
 
 def survey_list(request):
-    survey_obj = Survey.objects.all()
+    survey_obj = Survey.objects.all()[::-1]
     context={
         "isact_surveylist":"active",
         "survey":survey_obj
@@ -80,5 +80,18 @@ def add_new_survey(request):
         company_address = request.POST.get("company_address")
         company_email = request.POST.get("company_email")
         description = request.POST.get("description")
+        add_survey_obj = Survey(surveyor=surveyor,contact_person_name=contact_person_name,contact_person_email=contact_person_email,
+                                contact_person_phone=contact_person_phone,company_name=company_name,company_address=company_address,
+                                company_email=company_email,description=description)
+        add_survey_obj.save() # create
+        messages.success(request, "Survey Added Successfully !!")
+        return redirect('survey_list')
 
-    return render(request, "survey/add_new_survey.html")
+    return render(request, "survey/add_new_survey.html",)
+
+
+def remove_survey(request, id):
+    obj = get_object_or_404(Survey, id=id)
+    obj.delete()
+    messages.success(request, "Survey Removed Successfully")
+    return redirect('survey_list')

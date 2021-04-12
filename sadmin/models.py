@@ -45,7 +45,7 @@ class Surveyor(models.Model):
 
 
 class Survey(models.Model):
-    surveyor = models.ForeignKey(Surveyor, on_delete=models.CASCADE)
+    surveyor = models.CharField(max_length=200)
     contact_person_name = models.CharField(max_length=200)
     contact_person_email = models.CharField(max_length=200)
     contact_person_phone = models.CharField(max_length=200)
