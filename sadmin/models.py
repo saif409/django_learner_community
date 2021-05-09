@@ -60,3 +60,29 @@ class Survey(models.Model):
         return self.company_name
 
 
+class Country(models.Model):
+    country_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.country_name
+
+
+class Division(models.Model):
+    division_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.division_name
+
+
+class District(models.Model):
+    district_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.district_name
+
+
+class SubDistrict(models.Model):
+    sub_district_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.sub_district_name

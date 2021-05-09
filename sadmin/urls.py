@@ -25,6 +25,9 @@ urlpatterns = [
     path('survey-list/', views.survey_list, name="survey_list"),
     path('add-new-survey/', views.add_new_survey, name="add_new_survey"),
     path('remove-survey/<int:id>/', views.remove_survey, name="remove_survey"),
+    path('update-survey/<int:id>/', views.update_survey, name="update_survey"),
+    path('add-new-country', views.add_new_country, name="add_new_country"),
+    path('add-new-division', views.add_new_division, name="add_new_division"),
 
 
 

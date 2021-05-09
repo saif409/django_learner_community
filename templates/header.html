@@ -47,6 +47,9 @@
                         <li class="dashboard {{ isact_surveylist }}" >
                             <a href="{% url 'survey_list' %}"><i class="fa fa-list"></i> <span class="nav-label">Survey List</span></a>
                         </li>
+                        <li class="dashboard {{ isact_location }}">
+                            <a href="{% url 'add_new_country' %}"><i class="fa fa-map-marker"></i> <span class="nav-label">Location</span></a>
+                        </li>
 
                         <li>
                             <a href="{% url 'user_logout' %}"><i class="fa fa-sign-out"></i> <span class="nav-label"> Logout</span></a>
